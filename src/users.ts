@@ -15,9 +15,8 @@ export class Users {
     });
   }
 
-  activate() {
-    return this.http.fetch('users')
-      .then(response => response.json())
-      .then(users => this.users = users);
+  async activate() {
+    var res = await this.http.fetch('users');
+    this.users = await res.json();
   }
 }
