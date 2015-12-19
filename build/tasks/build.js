@@ -3,6 +3,7 @@ var runSequence = require('run-sequence');
 var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
+var postcss = require('gulp-postcss');
 var paths = require('../paths');
 var assign = Object.assign || require('object.assign');
 var notify = require("gulp-notify");
@@ -38,9 +39,12 @@ gulp.task('build-html', function() {
 });
 
 // copies changed css files to the output directory
-gulp.task('build-css', function() {
+gulp.task('build-css', function () {
   return gulp.src(paths.css)
+    .pipe(sourcemaps.init())
     .pipe(changed(paths.output, {extension: '.css'}))
+    .pipe(postcss([ require('autoprefixer'), require('precss') ]))
+    .pipe(sourcemaps.write({includeContent: true}))
     .pipe(gulp.dest(paths.output));
 });
 
