@@ -6,7 +6,8 @@
         "typings": true,
         "build": true,
         "dist": true,
-        "node_modules": false
+        "node_modules": true,
+        ".vscode": true
     },
     "editor.tabSize": 2,
     "files.associations": {
