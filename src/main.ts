@@ -9,7 +9,7 @@ bootstrap((aurelia: Aurelia): void => {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
-    .plugin('aurelia-animator-css');
+    .plugin("aurelia-animator-css");
 
-  aurelia.start().then(() => aurelia.setRoot('app', document.body));
+  aurelia.start().then(() => aurelia.setRoot("app", document.body));
 });

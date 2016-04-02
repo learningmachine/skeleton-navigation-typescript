@@ -1,6 +1,6 @@
-import {autoinject} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
-import 'isomorphic-fetch';
+import {autoinject} from "aurelia-framework";
+import {HttpClient} from "aurelia-fetch-client";
+import "isomorphic-fetch";
 
 interface IUser {
   avatar_url: string;
@@ -10,19 +10,19 @@ interface IUser {
 
 @autoinject
 export class Users {
-  heading: string = 'Github Users';
+  heading: string = "Github Users";
   users: Array<IUser> = [];
 
   constructor(public http: HttpClient) {
     http.configure(config => {
       config
         .useStandardConfiguration()
-        .withBaseUrl('https://api.github.com/');
+        .withBaseUrl("https://api.github.com/");
     });
   }
 
   async activate() {
-    let res = await this.http.fetch('users');
+    let res = await this.http.fetch("users");
     this.users = await res.json();
   }
 }

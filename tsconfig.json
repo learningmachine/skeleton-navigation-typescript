@@ -7,8 +7,7 @@
   },
   "filesGlob": [
     "./src/**/*.ts",
-    "./node_modules/aurelia-*/dist/aurelia-*.d.ts",
-    "./typings/browser.d.ts"
+    "./node_modules/aurelia-*/dist/aurelia-*.d.ts"
   ],
   "files": [
     "./src/app.ts",
