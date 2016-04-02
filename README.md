@@ -1,5 +1,17 @@
 # aurelia-skeleton-typescript-webpack
 
+## Changes
+
+Added the following features to the default aurelia webpack typescript project
+- async / await (users.ts)
+- autoinject (users.ts)
+- pushstate
+- animations
+- postcss (autoprefixer, precss, lost)
+  - cleaned up styles
+- bluebird promises
+- fixed splash flicker
+
 ## Getting started
 
 Before you start, make sure you have a working [NodeJS](http://nodejs.org/) environment, preferably with NPM 3.
@@ -41,6 +53,8 @@ To build an optimized, minified production bundle (output to /dist) execute:
 
 ```shell
 npm run prod
+cd dist
+pushstate-server .
 ```
 
 The production bundle includes all files that are required for deployment.
