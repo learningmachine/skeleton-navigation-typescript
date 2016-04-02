@@ -1,15 +1,15 @@
-import 'bootstrap';
-import {Aurelia} from 'aurelia-framework';
+﻿import {Aurelia} from "aurelia-framework";
+import {bootstrap} from "aurelia-bootstrapper-webpack";
 
-export function configure(aurelia: Aurelia) {
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "../node_modules/font-awesome/css/font-awesome.css";
+import "../styles/styles.css";
+
+bootstrap((aurelia: Aurelia): void => {
   aurelia.use
     .standardConfiguration()
-    .developmentLogging();
+    .developmentLogging()
+    .plugin('aurelia-animator-css');
 
-  aurelia.use.plugin('aurelia-animator-css');
-
-  //Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
-  //aurelia.use.plugin('aurelia-html-import-template-loader')
-
-  aurelia.start().then(a => a.setRoot());
-}
+  aurelia.start().then(() => aurelia.setRoot('app', document.body));
+});

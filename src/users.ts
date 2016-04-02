@@ -1,13 +1,19 @@
 import {autoinject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
-import 'fetch';
+import 'isomorphic-fetch';
+
+interface IUser {
+  avatar_url: string;
+  login: string;
+  html_url: string;
+}
 
 @autoinject
 export class Users {
-  heading = 'Github Users';
-  users = [];
+  heading: string = 'Github Users';
+  users: Array<IUser> = [];
 
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
     http.configure(config => {
       config
         .useStandardConfiguration()
@@ -16,7 +22,7 @@ export class Users {
   }
 
   async activate() {
-    var res = await this.http.fetch('users');
+    let res = await this.http.fetch('users');
     this.users = await res.json();
   }
 }

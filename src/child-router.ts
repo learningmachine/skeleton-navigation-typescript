@@ -1,8 +1,10 @@
-import {Router, RouterConfiguration} from 'aurelia-router'
+
+import {Router, RouterConfiguration} from 'aurelia-router';
 
 export class ChildRouter {
-  heading = 'Child Router';
   router: Router;
+
+  heading = 'Child Router';
 
   configureRouter(config: RouterConfiguration, router: Router) {
     config.map([

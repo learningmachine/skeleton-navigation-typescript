@@ -1,4 +1,18 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "editor.tabSize": 2
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "typings": true,
+        "build": true,
+        "dist": true,
+        "node_modules": true
+    },
+    "search.exclude": {
+        "**/node_modules": true
+    },
+    "editor.tabSize": 2,
+    "files.associations": {
+        "**/.babelrc": "json"
+    }
 }
