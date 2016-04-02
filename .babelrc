@@ -1,9 +1,9 @@
 {
-    "presets": [
-        "es2015-loose",
-        "stage-1"
-    ],
-    "plugins": [
-        "transform-decorators-legacy"
-    ]
+  "presets": [
+    "es2015-loose",
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-decorators-legacy"
+  ]
 }

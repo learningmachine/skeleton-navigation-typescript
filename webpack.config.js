@@ -41,9 +41,10 @@ module.exports = {
     loaders: [
       {
         test: /\.ts$/,
-        loader: 'babel-loader?' + JSON.stringify(babelSettings) + '!ts-loader',
+        loader: 'babel?' + JSON.stringify(babelSettings) + '!ts-loader',
         exclude: /(node_modules|typings)/
       },
+      { test: /\.js$/, loader: 'babel', exclude: /node_modules/, query: babelSettings },
       { test: /\.css?$/, loader: 'style!css!postcss' },
       { test: /\.html$/, loader: 'raw' },
       { test: /\.(png|gif|jpg)$/, loader: 'url-loader?limit=8192' },

@@ -6,6 +6,7 @@ body {
   text-align: center;
   margin: 10% 0 0 0;
   box-sizing: border-box;
+  display: block !important;
   
   .message {
     font-size: 72px;
