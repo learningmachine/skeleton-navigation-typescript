@@ -6,11 +6,8 @@ var ProvidePlugin = require('webpack/lib/ProvidePlugin');
 var precss = require('precss');
 var lost = require('lost');
 var autoprefixer = require('autoprefixer');
-
-var babelSettings = {
-    presets: ['es2015-loose', 'stage-1'],
-    plugins: ['transform-decorators-legacy']
-  };
+var fs = require("fs");
+var babelSettings = JSON.parse(fs.readFileSync(".babelrc"));
 
 module.exports = {
   resolve: {

@@ -11,6 +11,7 @@
     },
     "editor.tabSize": 2,
     "files.associations": {
-        ".babelrc": "json"
+        "/**/*.babelrc": "json",
+        "/**/*.css": "sass-indented"
     }
 }

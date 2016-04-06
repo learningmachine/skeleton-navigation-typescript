@@ -8,13 +8,10 @@ var pkg = require('./package.json');
 var precss = require('precss');
 var lost = require('lost');
 var autoprefixer = require('autoprefixer');
+var fs = require("fs");
+var babelSettings = JSON.parse(fs.readFileSync(".babelrc"));
 
 var outputFileTemplateSuffix = '-' + pkg.version;
-
-var babelSettings = {
-    presets: ['es2015-loose', 'stage-1'],
-    plugins: ['transform-decorators-legacy']
-  };
 
 module.exports = {
   entry: {
