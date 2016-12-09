@@ -4,6 +4,7 @@
     "msjsdiag.debugger-for-chrome",
     "eg2.tslint",
     "EditorConfig.EditorConfig",
-    "ricard.PostCSS"
+    "ricard.PostCSS",
+    "rbbit.typescript-hero"
   ]
 }
