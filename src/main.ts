@@ -1,15 +1,26 @@
-﻿import {Aurelia} from "aurelia-framework";
-import {bootstrap} from "aurelia-bootstrapper-webpack";
+import { Aurelia } from 'aurelia-framework'
+import environment from './environment';
 
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import "../node_modules/font-awesome/css/font-awesome.css";
-import "../styles/styles.css";
+(<any>Promise).config({
+  longStackTraces: environment.debug,
+  warnings: {
+    wForgottenReturn: false
+  }
+});
 
-bootstrap((aurelia: Aurelia): void => {
+export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
-    .developmentLogging()
+    .feature('resources')
     .plugin("aurelia-animator-css");
 
-  aurelia.start().then(() => aurelia.setRoot("app", document.body));
-});
+  if (environment.debug) {
+    aurelia.use.developmentLogging();
+  }
+
+  if (environment.testing) {
+    aurelia.use.plugin('aurelia-testing');
+  }
+
+  aurelia.start().then(() => aurelia.setRoot());
+}

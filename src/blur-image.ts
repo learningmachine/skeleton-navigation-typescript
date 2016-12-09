@@ -1,11 +1,12 @@
-import {inject} from "aurelia-framework";
+import {autoinject} from 'aurelia-framework';
 
-@inject(Element)
+@autoinject
 export class BlurImageCustomAttribute {
-  constructor(public element: Element) {
+  constructor(private element: Element) {
+    this.element = element;
   }
 
-  valueChanged(newImage) {
+  public valueChanged(newImage: HTMLImageElement) {
     if (newImage.complete) {
       drawBlur(this.element, newImage);
     } else {
@@ -14,7 +15,7 @@ export class BlurImageCustomAttribute {
   }
 }
 
-/* eslint-disable */
+/* tslint:disable */
 
 /*
 This Snippet is using a modified Stack Blur js lib for blurring the header images.

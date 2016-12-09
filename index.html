@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Aurelia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <div class="splash" style="display: none;">
-      <div class="message">Aurelia Navigation Skeleton</div>
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-    <script src="bundle.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Aurelia</title>
+  <!--The FontAwesome version is locked at 4.6.3 in the package.json file to keep this from breaking.-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body aurelia-app="main">
+  <div class="splash" style="display: none;">
+<div class="message">Aurelia Navigation Skeleton</div>
+<i class="fa fa-spinner fa-spin"></i>
+</div>
+
+<script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
+</body>
+
 </html>
