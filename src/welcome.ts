@@ -18,13 +18,7 @@ export class Welcome {
 
   public canDeactivate() {
     if (this.fullName !== this.previousValue) {
-      return confirm('Are you sure you want to leave?');
+      return confirm('Are you sure you want to leave??');
     }
-  }
-}
-
-export class UpperValueConverter {
-  public toView(value) {
-    return value && value.toUpperCase();
   }
 }

@@ -1,8 +1,9 @@
-import {FrameworkConfiguration} from 'aurelia-framework';
+import { FrameworkConfiguration } from 'aurelia-framework';
 
 export function configure(config: FrameworkConfiguration) {
   config.globalResources([
     './attributes/blur-image',
-    './elements/loading-indicator'
+    './elements/loading-indicator',
+    './value-converters/upper-value-converter'
   ]);
 }
