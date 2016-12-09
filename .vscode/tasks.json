@@ -1,31 +1,74 @@
 {
-	"version": "0.1.0",
-	"command": "npm",
-	"isShellCommand": true,
-	"showOutput": "always",
-	"suppressTaskName": true,
-	"tasks": [
-		{
-			"taskName": "run",
-			"args": [ "run", "dev" ],
-			"isWatching": true
-		},
-		{
-			"taskName": "build",
-			"args": [ "run", "build" ],
-			"isBuildCommand": true
-		},
-		{
-			"taskName": "install",
-			"args": ["install"]
-		},
-		{
-			"taskName": "update",
-			"args": ["update"]
-		},
-		{
-			"taskName": "test",
-			"args": ["run", "test"]
-		}
-	]
+  "version": "0.1.0",
+  "command": "au",
+  "isShellCommand": true,
+  "showOutput": "always",
+  "tasks": [
+    {
+      "taskName": "build",
+      "args": [
+        "build"
+      ],
+      "isBuildCommand": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^([^\\[].*)\\((\\d+),(\\d+)\\):\\s+(warning|error)\\s+(.*):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 6
+        }
+      }
+    },
+    {
+      "taskName": "run",
+      "args": [
+        "run",
+        "--watch"
+      ],
+      "isWatching": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^([^\\[].*)\\((\\d+),(\\d+)\\):\\s+(warning|error)\\s+(.*):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 6
+        }
+      }
+    },
+    {
+      "taskName": "test",
+      "args": [
+        "test"
+      ],
+      "problemMatcher": {
+        "owner": "typescript",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^([^\\[].*)\\((\\d+),(\\d+)\\):\\s+(warning|error)\\s+(.*):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 6
+        }
+      }
+    }
+  ]
 }
