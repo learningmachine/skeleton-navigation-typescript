@@ -1,5 +1,6 @@
 import { Aurelia } from 'aurelia-framework'
 import environment from './environment';
+import { HttpClient } from 'aurelia-fetch-client';
 
 (<any>Promise).config({
   longStackTraces: environment.debug,
@@ -21,6 +22,15 @@ export function configure(aurelia: Aurelia) {
   if (environment.testing) {
     aurelia.use.plugin('aurelia-testing');
   }
+
+  let http = new HttpClient();
+  http.configure(config => {
+    config
+      .useStandardConfiguration()
+      .withBaseUrl('https://api.github.com/');
+  });
+
+  aurelia.container.registerInstance(HttpClient, http);
 
   aurelia.start().then(() => aurelia.setRoot());
 }

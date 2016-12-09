@@ -7,13 +7,7 @@ export class Users {
   public heading = 'Github Users';
   public users: User[] = [];
 
-  constructor(private http: HttpClient) {
-    http.configure(config => {
-      config
-        .useStandardConfiguration()
-        .withBaseUrl('https://api.github.com/');
-    });
-  }
+  constructor(private http: HttpClient) { }
 
   public async activate() {
     let res = await this.http.fetch('users');
